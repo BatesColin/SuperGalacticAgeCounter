@@ -30,13 +30,13 @@ export class Galactic {
       ageOnJupiter() {
         return getAge(this.birthday) / 11.86;
       }
-      compareLife(){
-        if(this.lifeExpectancy()*31536000 >= this.timeDifference(Date.now())){
-          return "Your life expectancy is " + this.lifeExpectancy() + " years.";
+      compareLife() {
+        if(this.lifeExpectancy*31536000 >= this.dateDifference(Date.now())){
+          return "Your life expectancy is " + this.lifeExpectancy + " years.";
         }
         else
         {
-          return "You've lived " + this.toYears(this.timeDifference(Date.now())-this.lifeExpectancy()*31536000) + " years and " + this.toMonths(this.timeDifference(Date.now())-this.lifeExpectancy()*31536000) + " months over your life expectancy of " + this.lifeExpectancy() + " years!";
+          return "You've lived " + Math.floor((this.dateDifference(Date.now())-this.lifeExpectancy*31536000)/31536000) + " years over your life expectancy of " + this.lifeExpectancy + " years!";
         }
       }
       

@@ -21,28 +21,28 @@ describe('Galactic', function() {
         let birthday = new Date('1999-08-19');
         let futureDate = new Date('1999-09-02');
         let newAge = new Galactic(7, birthday);
-        expect(Math.floor(newAge.ageOnMercury(futureDate))).toEqual(200)
+        expect(Math.floor(newAge.ageOnMercury(futureDate))).toEqual(79)
     })
 
     it('will convert a players age on earth to thier age on Venus',function(){
         let birthday = new Date('1999-08-19');
         let futureDate = new Date('1999-09-02');
         let newAge = new Galactic(4, birthday);
-        expect(Math.floor(newAge.ageOnVenus(futureDate))).toEqual(77);
+        expect(Math.floor(newAge.ageOnVenus(futureDate))).toEqual(30);
     })
 
     it('will convert a players age on Earth to thier age on Mars',function(){
         let birthday = new Date('1999-08-19');
         let futureDate = new Date('1999-09-02');
         let newAge = new Galactic(3, birthday);
-        expect(Math.floor(newAge.ageOnMars(futureDate))).toEqual(25);
+        expect(Math.floor(newAge.ageOnMars(futureDate))).toEqual(10);
     })
 
     it('will convert a players age on Earth to thier age on Jupiter',function(){
         let birthday = new Date('1999-08-19');
         let futureDate = new Date('1999-09-02');
         let newAge = new Galactic(22, birthday);
-        expect(Math.floor(newAge.ageOnJupiter(futureDate))).toEqual(4);
+        expect(Math.floor(newAge.ageOnJupiter(futureDate))).toEqual(1);
     })
     it('will tell a user how long they have left to live', function(){
         let lifeExpectancy = 77;
@@ -53,16 +53,17 @@ describe('Galactic', function() {
         let timeLeftMars = lifeExpectancy-newAge.ageOnMars();
         let timeLeftJupiter = lifeExpectancy-newAge.ageOnJupiter();
 
-        expect(Math.floor(timeLeftMercury)).toEqual(3)
-        expect(Math.floor(timeLeftVenus)).toEqual(3)
-        expect(Math.floor(timeLeftMars)).toEqual(3)
-        expect(Math.floor(timeLeftJupiter)).toEqual(3)
+        expect(Math.floor(timeLeftMercury)).toEqual(-40)
+        expect(Math.floor(timeLeftVenus)).toEqual(31)
+        expect(Math.floor(timeLeftMars)).toEqual(62)
+        expect(Math.floor(timeLeftJupiter)).toEqual(74)
     })
-    it('will tell a person ho far past thier life expectancy they are', function(){
+    it('will tell a person how far past thier life expectancy they are', function(){
         let lifeExpectancy = 77;
-        let birthday = new Date('1990-08-19');
+        debugger;
+        let birthday = new Date('1890-08-19');
         let newAge = new Galactic(85, birthday, lifeExpectancy);
         let timeOver = newAge.compareLife();
-        expect(timeOver).toEqual("You've lived")
+        expect(timeOver).toEqual("You've lived 51 years over your life expectancy of 77 years!")
     })
 })

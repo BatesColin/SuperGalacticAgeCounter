@@ -8,7 +8,7 @@
 
 This app will allow its users to:
 
-1) Input thier name in years and translate it to seconds.
+1) Input thier age in years and translate it to seconds.
 2) Take 2 dates and calculate the difference in seconds.
 3) Calculate a persons age in Mercury years.
 4) Calculate a persons age in Venus years.
